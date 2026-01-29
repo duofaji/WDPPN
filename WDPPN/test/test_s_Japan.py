@@ -63,7 +63,7 @@ def test_model(model, trace_test_names, data_paths, batch_size, device):
         
         ts_t = torch.nn.Sigmoid()(ts_t)
         
-        ts_predict = torch.squeeze(ts_t).detach().cpu()
+        ts_predict = torch.squeeze(ts_t,dim=1).detach().cpu()
         
         ts_pre = torch.cat((ts_pre, ts_predict),dim=0)
         
