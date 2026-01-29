@@ -125,11 +125,11 @@ if __name__ == "__main__":
     model.load_state_dict(checkpoint)
     model.eval()
 
-    trace_test_names = np.load('../dataset/INSTANCE/trace.npy')
+    trace_test_names = np.load('../sample_data/INSTANCE/trace.npy')
     
-    data_paths = '../dataset/INSTANCE/data_instance.hdf5'
+    data_paths = '../sample_data/INSTANCE/data_instance.hdf5'
 
-    batch_size = 128
+    batch_size = 16
 
     tp_predict_all, tp_label_all = test_model(model, trace_test_names, data_paths, batch_size, device)
     

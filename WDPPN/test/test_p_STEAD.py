@@ -124,29 +124,17 @@ if __name__ == "__main__":
     model.load_state_dict(checkpoint)
     model.eval()
 
-    trace_test_name1 = np.load('../dataset/STEAD/trace_test1.npy')
-    trace_test_name2 = np.load('../dataset/STEAD/trace_test2.npy')
-    trace_test_name3 = np.load('../dataset/STEAD/trace_test3.npy')
-    trace_test_name4 = np.load('../dataset/STEAD/trace_test4.npy')
-    trace_test_name5 = np.load('../dataset/STEAD/trace_test5.npy')
+    trace_test_name1 = np.load('../sample_data/STEAD/trace_test1.npy')
     
-    trace_test_names = [trace_test_name1, trace_test_name2, trace_test_name3, trace_test_name4, trace_test_name5]
+    trace_test_names = [trace_test_name1]
     data_paths = [
-        '../dataset/STEAD/data1.hdf5',
-        '../dataset/STEAD/data2.hdf5',
-        '../dataset/STEAD/data3.hdf5',
-        '../dataset/STEAD/data4.hdf5',
-        '../dataset/STEAD/data5.hdf5'
+        '../sample_data/STEAD/data1.hdf5'
     ]
     label_paths = [
-        '../dataset/STEAD/label1.hdf5',
-        '../dataset/STEAD/label2.hdf5',
-        '../dataset/STEAD/label3.hdf5',
-        '../dataset/STEAD/label4.hdf5',
-        '../dataset/STEAD/label5.hdf5'
+        '../sample_data/STEAD/label1.hdf5'
     ]
     
-    batch_size = 128
+    batch_size = 16
 
     tp_predict_all, tp_label_all = test_model(model, trace_test_names, data_paths, label_paths, batch_size, device)
     

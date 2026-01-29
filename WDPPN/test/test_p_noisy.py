@@ -126,17 +126,17 @@ if __name__ == "__main__":
     model.load_state_dict(checkpoint)
     model.eval()
 
-    trace_test_names_8 = np.load('../dataset/noisy_data/p/trace_use_8.npy')
-    trace_test_names_12 = np.load('../dataset/noisy_data/p/trace_use_12.npy')
-    trace_test_names_16 = np.load('../dataset/noisy_data/p/trace_use_16.npy')
-    trace_test_names_20 = np.load('../dataset/noisy_data/p/trace_use_20.npy')
+    trace_test_names_8 = np.load('../sample_data/noisy_data/p/trace_use_8.npy')
+    trace_test_names_12 = np.load('../sample_data/noisy_data/p/trace_use_12.npy')
+    trace_test_names_16 = np.load('../sample_data/noisy_data/p/trace_use_16.npy')
+    trace_test_names_20 = np.load('../sample_data/noisy_data/p/trace_use_20.npy')
     
-    data_paths_8 = '../dataset/noisy_data/p/data_8.hdf5'
-    data_paths_12 = '../dataset/noisy_data/p/data_12.hdf5'
-    data_paths_16 = '../dataset/noisy_data/p/data_16.hdf5'
-    data_paths_20 = '../dataset/noisy_data/p/data_20.hdf5'
+    data_paths_8 = '../sample_data/noisy_data/p/data_8.hdf5'
+    data_paths_12 = '../sample_data/noisy_data/p/data_12.hdf5'
+    data_paths_16 = '../sample_data/noisy_data/p/data_16.hdf5'
+    data_paths_20 = '../sample_data/noisy_data/p/data_20.hdf5'
 
-    batch_size = 128
+    batch_size = 16
 
     tp_predict_all_8, tp_label_all_8 = test_model(model, trace_test_names_8, data_paths_8, batch_size, device)
     tp_predict_all_12, tp_label_all_12 = test_model(model, trace_test_names_12, data_paths_12, batch_size, device)

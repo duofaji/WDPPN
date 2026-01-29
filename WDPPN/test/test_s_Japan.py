@@ -75,7 +75,7 @@ def label_cal(origin_path, trace_origin_name):
     s_label = {}
     data_japan = h5py.File(origin_path, 'r')
     
-    for i in range(10000):
+    for i in range(100):
         name = trace_origin_name[i]
         ts = np.array(data_japan.get('ts/'+name)).tolist()
         ts_UTC = [UTCDateTime(t) for t in ts]
@@ -127,7 +127,7 @@ def evaluate_result(window_number, ts_predict, origin_path, trace_origin_name):
     data_japan = h5py.File(origin_path, 'r')
     s_label = label_cal(origin_path, trace_origin_name)
 
-    for i in range(10000):
+    for i in range(100):
         size = window_number[i]
         end_index = int(start_index + size)
         ts_group = ts_predict[start_index:end_index]
@@ -189,7 +189,7 @@ def evaluate_result(window_number, ts_predict, origin_path, trace_origin_name):
     FN_s_number = 0
     TP_error_s = []
 
-    for i in range(10000):
+    for i in range(100):
         name = trace_origin_name[i]
         TP = s_result[name]['TP']
         FP = s_result[name]['FP']
@@ -220,14 +220,14 @@ if __name__ == "__main__":
     model.load_state_dict(checkpoint)
     model.eval()
 
-    trace_test_names = np.load('../dataset/Japan/window_names.npy')
-    window_number = np.load('../dataset/Japan/window_counts.npy')
-    trace_origin_name = np.load('../dataset/Japan/trace.npy')
+    trace_test_names = np.load('../sample_data/Japan/window_names.npy')
+    window_number = np.load('../sample_data/Japan/window_counts.npy')
+    trace_origin_name = np.load('../sample_data/Japan/trace.npy')
     
-    origin_path = '../dataset/Japan/origin_records.hdf5'
-    data_paths = '../dataset/Japan/records_segment.hdf5'
+    origin_path = '../sample_data/Japan/origin_records.hdf5'
+    data_paths = '../sample_data/Japan/records_segment.hdf5'
 
-    batch_size = 128
+    batch_size = 16
 
     ts_predict_all = test_model(model, trace_test_names, data_paths, batch_size, device)
     
