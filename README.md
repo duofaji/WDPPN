@@ -5,6 +5,7 @@ This repository contains the implementation of **WDPPN**, a deep learning model 
 **Paper Title:** WDPPN: A deep learning model with embedded learnable wavelet denoising for robust seismic phase picking  
 **Authors:** Duofa Ji, et al.  
 **Status:** Submitted to *Computers & Geosciences*
+
 E-mail: jiduofa@hit.edu.cn
 
 
