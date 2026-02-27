@@ -1,10 +1,10 @@
-# WDPPN: A Deep Learning Model with Embedded Learnable Wavelet Denoising for Robust Seismic Phase Picking
+# WDPPN: An end-to-end attention network with learnable coefficient-wise wavelet shrinkage for robust seismic phase picking
 
-This repository contains the implementation of **WDPPN**, a deep learning model proposed in our paper submitted to *Computers & Geosciences*.
+This repository contains the implementation of **WDPPN**, a deep learning model proposed in our paper submitted to *Geophysics*.
 
-**Paper Title:** WDPPN: A deep learning model with embedded learnable wavelet denoising for robust seismic phase picking  
+**Paper Title:** # WDPPN: An end-to-end attention network with learnable coefficient-wise wavelet shrinkage for robust seismic phase picking
 **Authors:** Duofa Ji, et al.  
-**Status:** Submitted to *Computers & Geosciences*
+**Status:** Submitted to *Geophysics*
 
 E-mail: jiduofa@hit.edu.cn
 
