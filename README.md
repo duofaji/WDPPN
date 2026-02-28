@@ -3,10 +3,7 @@
 This repository contains the implementation of **WDPPN**, a deep learning model proposed in our paper submitted to *Geophysics*.
 
 **Paper Title:** # WDPPN: An end-to-end attention network with learnable coefficient-wise wavelet shrinkage for robust seismic phase picking
-**Authors:** Duofa Ji, et al.  
 **Status:** Submitted to *Geophysics*
-
-E-mail: jiduofa@hit.edu.cn
 
 
 ---
